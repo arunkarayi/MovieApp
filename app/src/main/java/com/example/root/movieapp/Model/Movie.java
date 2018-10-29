@@ -22,6 +22,9 @@ public class Movie {
     @SerializedName("release_date")
     private String release_date;
 
+    @SerializedName("overview")
+    private String overview;
+
     public int getId() {
         return id;
     }
@@ -52,6 +55,14 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
     public String getOriginal_language() {

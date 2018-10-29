@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="90dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/poster"
+                android:textStyle="bold"
+                android:text="Venom"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/poster"
+                android:layout_toLeftOf="@id/arrow"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:lines="3"
+                android:maxLines="3"/>
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9.8"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:layout_toRightOf="@+id/poster"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/rating_bg"
+                android:layout_alignParentBottom="true"/>
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EN"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:background="@drawable/language_bg"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/rating"
+                android:layout_toLeftOf="@+id/language"
+                android:textAlignment="center"
+                android:text="12th feb"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

@@ -29,7 +29,7 @@ public interface MainInterface {
 
     interface setMainView{
 
-        Void showProgress();
+        void showProgress();
 
         void hideProgress();
 
