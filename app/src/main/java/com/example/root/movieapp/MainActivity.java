@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity implements MainInterface.set
         @Override
         public void onItemClick(Movie movie) {
             Toast.makeText(getApplicationContext(),movie.getTitle(),Toast.LENGTH_SHORT).show();
-            Intent intent;
+            Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+            intent.putExtra("movie",movie);
+            startActivity(intent);
         }
     };
 
