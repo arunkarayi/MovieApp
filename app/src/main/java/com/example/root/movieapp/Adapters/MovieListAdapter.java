@@ -41,7 +41,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Hold
         holder.overview.setText(movieList.get(i).getOverview());
         holder.rating.setText(""+movieList.get(i).getRating());
         holder.language.setText(movieList.get(i).getOriginal_language());
-        // TODO: 30/10/18 date conversion
+        holder.date.setText(movieList.get(i).formatDate());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,6 +3,10 @@ package com.example.root.movieapp.Model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class Movie implements Serializable {
 
@@ -26,6 +30,9 @@ public class Movie implements Serializable {
 
     @SerializedName("overview")
     private String overview;
+
+    @SerializedName("backdrop_path")
+    private String backdrop_path;
 
     public int getId() {
         return id;
@@ -81,5 +88,41 @@ public class Movie implements Serializable {
 
     public void setRelease_date(String release_date) {
         this.release_date = release_date;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
+    }
+
+    public String formatDate(){
+        String releaseDate = "";
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(release_date);
+            String day = new SimpleDateFormat("d",Locale.ENGLISH).format(date);
+            switch (Integer.parseInt(day)){
+                case 1:
+                    day += "st ";
+                    break;
+                case 2:
+                    day += "nd ";
+                    break;
+                case 3:
+                    day += "rd ";
+                    break;
+                default:
+                    day += "th ";
+                    break;
+            }
+            releaseDate += day;
+            String month = new SimpleDateFormat("MMMM yyyy",Locale.ENGLISH).format(date);
+            releaseDate += month;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return releaseDate;
     }
 }

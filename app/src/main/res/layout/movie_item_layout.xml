@@ -30,7 +30,9 @@
                 android:textStyle="bold"
                 android:text="Venom"
                 android:textSize="20sp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/poster" />
 
             <ImageView
                 android:id="@+id/arrow"
@@ -39,7 +41,8 @@
                 android:src="@drawable/ic_arrow_right"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/title"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:id="@+id/overview"
@@ -51,7 +54,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:lines="3"
-                android:maxLines="3"/>
+                android:maxLines="3"
+                android:layout_toEndOf="@+id/poster"
+                android:layout_toStartOf="@id/arrow" />
 
             <TextView
                 android:id="@+id/rating"
@@ -64,7 +69,9 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/rating_bg"
-                android:layout_alignParentBottom="true"/>
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/poster"
+                android:layout_marginStart="10dp" />
 
             <TextView
                 android:id="@+id/language"
@@ -77,7 +84,8 @@
                 android:textColor="@android:color/white"
                 android:background="@drawable/language_bg"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:id="@+id/date"
@@ -87,7 +95,9 @@
                 android:layout_toRightOf="@+id/rating"
                 android:layout_toLeftOf="@+id/language"
                 android:textAlignment="center"
-                android:text="12th feb"/>
+                android:text="12th feb"
+                android:layout_toEndOf="@+id/rating"
+                android:layout_toStartOf="@+id/language" />
 
         </RelativeLayout>
 

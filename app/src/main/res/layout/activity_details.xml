@@ -9,22 +9,160 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"/>
+        android:layout_height="?actionBarSize"
+        app:titleTextColor="@android:color/white"
+        android:theme="@style/Theme.AppCompat"
+        android:background="@color/colorPrimary"/>
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/cover_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"/>
 
     <TextView
+        android:id="@+id/overview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/image"/>
+        android:layout_marginBottom="25dp"
+        android:layout_below="@+id/cover_image"/>
+
+    <TextView
+        android:id="@+id/runtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000Minutes"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/overview"/>
+
+    <TextView
+        android:id="@+id/dateofrelease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/overview"
+        android:text="12th feb"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9.8"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rating_bg"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/overview"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EN"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:background="@drawable/language_bg"
+        android:layout_below="@+id/rating"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:id="@+id/genres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/rating"
+        android:layout_marginStart="15dp"
+        android:layout_toLeftOf="@+id/language"
+        android:layout_toStartOf="@+id/language"
+        android:layout_marginEnd="5dp" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateofrelease"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/cardview"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/language"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:id="@+id/budgetLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Budget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/budget"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="25million"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/revenueLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/budgetLyt"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Revenue"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/revenue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="25million"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
 
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

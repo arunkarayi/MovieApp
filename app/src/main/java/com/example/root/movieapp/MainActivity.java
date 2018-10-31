@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -22,11 +24,16 @@ public class MainActivity extends AppCompatActivity implements MainInterface.set
 
     private RecyclerView movie_reclrvw;
     private ProgressBar pb;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Popular Movies");
 
         movie_reclrvw = findViewById(R.id.movie_reclrvw);
         pb = findViewById(R.id.pb);
@@ -42,13 +49,17 @@ public class MainActivity extends AppCompatActivity implements MainInterface.set
     private MovieListItemClickListener movieListItemClickListener = new MovieListItemClickListener() {
         @Override
         public void onItemClick(Movie movie) {
-            Toast.makeText(getApplicationContext(),movie.getTitle(),Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
             intent.putExtra("movie",movie);
             startActivity(intent);
         }
     };
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
 
     @Override
     public void showProgress() {
@@ -71,5 +82,6 @@ public class MainActivity extends AppCompatActivity implements MainInterface.set
     @Override
     public void onFailure() {
 // TODO: 30/10/18 error layout
+        Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
     }
 }
